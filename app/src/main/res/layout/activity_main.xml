@@ -11,14 +11,13 @@
         android:id="@+id/numero1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="24dp"
         android:background="#2196F3"
         android:backgroundTint="#FFC107"
         android:ems="10"
         android:hint="Ingrese numero 1 "
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,14 +25,13 @@
         android:id="@+id/numero2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="24dp"
         android:background="#AFB42B"
         android:backgroundTint="#FFC107"
         android:ems="10"
         android:hint="Ingrese numero 2 "
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numero1" />
 
@@ -41,8 +39,8 @@
         android:id="@+id/sumar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="#009688"
         android:onClick="Sumar"
         android:text="Sumar"
@@ -53,11 +51,29 @@
         android:id="@+id/resultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="16dp"
         android:background="#FF8F00"
         android:text="Resultado"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sumar" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="411dp"
+        android:layout_height="371dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultado">
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="wrap_content"
+            android:layout_height="320dp"
+            android:layout_margin="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:background="#FFFFFF" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
