@@ -7,73 +7,56 @@
     android:background="#EA2C7A8E"
     tools:context=".MainActivity">
 
+
     <EditText
-        android:id="@+id/numero1"
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="#2196F3"
-        android:backgroundTint="#DF8E87"
+        android:layout_marginTop="76dp"
+        android:background="#EFEFEF"
+        android:backgroundTint="#DFDADA"
         android:ems="10"
-        android:hint="Ingrese numero 1 "
+        android:hint="Contraseña... "
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correoElectronico" />
+
+    <Button
+        android:id="@+id/ingresarBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:backgroundTint="#009688"
+        android:onClick="onClick"
+        android:text="Ingresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <EditText
+        android:id="@+id/correoElectronico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:background="#E4D9D9"
+        android:ems="10"
+        android:hint="Correo electronico"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/numero2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/registroBoton"
+        android:layout_width="115dp"
+        android:layout_height="51dp"
         android:layout_marginTop="24dp"
-        android:background="#EA8C8C"
-        android:backgroundTint="#F19595"
-        android:ems="10"
-        android:hint="Ingrese numero 2 "
-        android:inputType="number"
+        android:backgroundTint="#009688"
+        android:text="Registrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numero1" />
-
-    <Button
-        android:id="@+id/sumar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#009688"
-        android:onClick="Sumar"
-        android:text="Sumar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numero2" />
-
-    <TextView
-        android:id="@+id/resultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="16dp"
-        android:background="#E4E4E4"
-        android:text="Resultado"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sumar" />
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearLayoutCompat"
-        android:layout_width="411dp"
-        android:layout_height="371dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultado">
-
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="wrap_content"
-            android:layout_height="320dp"
-            android:layout_margin="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="60dp"
-            android:background="#FFFFFF" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+        app:layout_constraintTop_toBottomOf="@+id/ingresarBoton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
