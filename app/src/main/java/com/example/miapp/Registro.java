@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class Registro extends AppCompatActivity implements View.OnClickListener {
   private EditText correoUsuario;
@@ -23,7 +24,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
   private Button registrarBoton;
   private Button volverButton;
   private FirebaseAuth mAuth;
-  private ProgressDialog progressDialog;
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,11 +61,11 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         String contra = contraUsuario.getText().toString().trim();
 
         if(TextUtils.isEmpty(correo)){
-            Toast.makeText(this,"Ingrese algo no sea concha",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Debe ingresar un correo electronico ",Toast.LENGTH_LONG).show();
             return;
         }
         if(TextUtils.isEmpty(contra)){
-            Toast.makeText(this,"Ingrese algo no sea concha",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Debe ingresar una contraseña ",Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -77,8 +78,13 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Registro.this,"Se registro correctamente",Toast.LENGTH_LONG).show();
+
                         }else{
-                            Toast.makeText(Registro.this,"No Se registro correctamente",Toast.LENGTH_LONG).show();
+                            if(task.getException()instanceof FirebaseAuthUserCollisionException){
+                                Toast.makeText(Registro.this,"Este usuario ya esta registrado",Toast.LENGTH_LONG).show();
+                            }else{
+                                Toast.makeText(Registro.this,"No Se registro correctamente",Toast.LENGTH_LONG).show();
+                            }
                         }
                         progressDialog.dismiss();
                     }
